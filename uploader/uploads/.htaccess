@@ -1,0 +1,14 @@
+Options +Indexes -ExecCGI
+
+#AuthUserfile /var/www/uploader/uploads/.htpasswd
+#AuthName "Please enter your ID and password"
+#AuthType Basic
+#require valid-user
+# band / hoge
+
+php_flag engine off
+AddType text/plain php
+AddType text/plain ruby
+
+
+
