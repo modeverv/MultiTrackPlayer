@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 
-
 function getFiles(){
     $mp3_files = glob("/var/www/chiaki/mtr/uploader/uploads/*.mp3");
     $m4a_files = glob("/var/www/chiaki/mtr/uploader/uploads/*.m4a");
@@ -15,9 +14,11 @@ function setUpSelect($files){
     }
     return $html;
 }
+
 function normalizePath($value){
    return "https://modeverv.aa0.netvolante.jp/chiaki/mtr/uploader/uploads/" . basename($value);
 }
+
 $files = getFiles();
 ?>
 <!DOCTYPE html>
