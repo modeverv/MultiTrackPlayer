@@ -1,7 +1,7 @@
 # MTR
 - function: sync play audio(mp3,m4a)
 - no user management
-## サクッとmtr作りました</p>
+## サクッとmtr作りました
 ### 使い方
 - uploaderでファイルをアップします
 - coplayでアップしたファイルを選択してsetを押下
