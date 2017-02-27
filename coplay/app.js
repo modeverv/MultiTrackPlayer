@@ -10,8 +10,7 @@ $(function(){
         if($(this)[0].src != "" ){
           $(this)[0].play().catch(function(){});
         }
-      } catch (x) {
-      }
+      } catch (x) { }
     });
   }
   
@@ -21,8 +20,7 @@ $(function(){
         if($(this)[0].src != "" ){
           $(this)[0].pause().catch(function(){});
         }
-      } catch (x) {
-      }
+      } catch (x) { }
     });
   }
   
@@ -73,6 +71,7 @@ $(function(){
   $("#slider").on("mouseup touchend",function () {
     var currentTime = $("#slider").slider("value");
     setCurrentTime(currentTime);
+    play();
   });
 
   $("#slider").on("mousedown touchstart",function () {

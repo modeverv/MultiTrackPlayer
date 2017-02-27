@@ -7,11 +7,19 @@ function getFiles(){
     return array_merge($mp3_files,$m4a_files);
 }
 
-function setUpSelect($files){
-    $html = "";
+function renderSelect($files,$i){
+    $html = "<select id=\"select-" . $i . "\" style=\"display:inline-block\">\n";
     foreach($files as $k => $v){
         $html .= "<option value='" . normalizePath($v) . "'>" . basename($v) . "</option>\n";
     }
+    $html .= "</select>\n";
+    return $html;
+}
+
+function renderSetButtons($i){
+    $html = "<button id=\"set-" .  $i . "\" data-select=\"select-" . $i . "\" data-audio=\"audio-" . $i . "\">set</button>\n";
+    $html .= "<button id=\"unset-" . $i . "\" data-select=\"select-". $i . "\" data-audio=\"audio-" . $i . "\">unset</button>\n";
+    $html .= "<span id=\"setted-" . $i . "\"></span>";
     return $html;
 }
 
@@ -42,12 +50,8 @@ $files = getFiles();
 <audio id="audio-<?php echo $i?>" src="" controls>
   <p>音声を再生するには、audioタグをサポートしたブラウザが必要です。</p>
 </audio>
-<select id="select-<?php echo $i ?>" style="display:inline-block">
-<?php echo setupSelect($files) ?>
-</select>
-<button id="set-<?php echo $i ?>" data-select="select-<?php echo $i ?>" data-audio="audio-<?php echo $i ?>">set</button>
-<button id="unset-<?php echo $i ?>" data-select="select-<?php echo $i ?>" data-audio="audio-<?php echo $i ?>">unset</button>
-<span id="setted-<?php echo $i ?>"></span>
+<?php echo renderSelect($files,$i)?>
+<?php echo renderSetButtons($i) ?>                       
 </div>                                  
 
 <?php } ?>
