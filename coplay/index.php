@@ -25,19 +25,21 @@ $files = getFiles();
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<title>MTR</title>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<title>Multi Track Player</title>
+<script src="//code.jquery.com/jquery-1.8.3.js"></script>
+<script src="//code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="app.js"></script>
 </head>
 <body>
-<h1>MTR</h1>
+<h1>Multi Track Player</h1>
 
 <?php for($i=0,$l=8;$i <$l;$i++){ ?>
 <div>
-<audio id="audio-<?php echo $i?>" controls>
+<audio id="audio-<?php echo $i?>" src="" controls>
   <p>音声を再生するには、audioタグをサポートしたブラウザが必要です。</p>
 </audio>
 <select id="select-<?php echo $i ?>" style="display:inline-block">
@@ -49,7 +51,7 @@ $files = getFiles();
 </div>                                  
 
 <?php } ?>
-<button id="play">play</buttion>
-<button id="pause">Pause</buttion>
+<p><button id="play">play</button>&nbsp;&nbsp;<button id="pause">Pause</button></p>
+<div id="slider" style="margin:20px;"></div>
 </body>
 </html>
